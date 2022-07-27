@@ -1,0 +1,80 @@
+name: flutter_unit
+description: A new Flutter project.
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.0-80.1.beta <3.0.0"
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # getx 状态管理框架 https://pub.flutter-io.cn/packages/get
+  get: ^4.6.1
+
+  # easyloading
+  flutter_easyloading: ^3.0.3
+
+  # storage + cache
+  shared_preferences: ^2.0.12
+
+  # 包信息  【已停止维护】
+  package_info: ^2.0.0
+
+  # http
+  dio: ^4.0.6
+  dio_cookie_manager: ^2.0.0
+  cookie_jar: ^3.0.1
+
+
+  # 屏幕适配  https://github.com/OpenFlutter/flutter_screenutil
+  flutter_screenutil: ^5.5.3+2
+
+
+  # 下拉刷新  # 刷新  https://github.com/peng8350/flutter_pulltorefresh/blob/master/README_CN.md
+  pull_to_refresh: ^2.0.0
+
+  # 星星组件
+  flutter_star: ^1.0.2
+
+  cupertino_icons: ^1.0.2
+
+# 让一个组件点击时执行旋转，再点击旋转回去。
+  toggle_rotate: ^1.0.1
+#  # 文字分享
+#  share_plus: ^3.0.4
+
+  # 路径
+  path_provider: ^2.0.11
+
+  # 数据库
+  sqflite: ^2.0.3
+  sqflite_common_ffi: ^2.1.1 # 数据库
+#  Dart的全面、跨平台路径操作库
+  path: ^1.8.1
+
+  #实体比较
+  equatable: ^2.0.3
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+  flutter_lints: ^1.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/flutter.db
+    - assets/version.json
