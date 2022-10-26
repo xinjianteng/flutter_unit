@@ -4,16 +4,6 @@
 /// contact me by email 1981462002@qq.com
 /// 说明:
 ///
-//    {
-//      "widgetId": 126,
-//      "name": 'Dialog基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【child】 : 动画图标数据   【Widget】\n"
-//          "【elevation】 : 影深  【double】\n"
-//          "【backgroundColor】 : 背景色  【Color】\n"
-//          "【shape】 : 形状   【ShapeBorder】",
-//    }
 import 'package:flutter/material.dart';
 
 class CustomDialog extends StatelessWidget {

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:flutter_unit/common/values/colors.dart';
-import 'package:flutter_unit/common/values/dimens.dart';
+import 'package:get/get.dart';
 
-import '../../common/routers/routes.dart';
 import 'my_logic.dart';
 import 'my_state.dart';
 

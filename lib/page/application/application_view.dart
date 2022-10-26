@@ -1,11 +1,8 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../common/style/style.dart';
 import '../../common/values/values.dart';
-import '../../common/widget/widgets.dart';
 import 'application_logic.dart';
 import 'application_state.dart';
 

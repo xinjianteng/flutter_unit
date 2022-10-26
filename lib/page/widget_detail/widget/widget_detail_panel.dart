@@ -3,8 +3,6 @@ import 'package:flutter_star/flutter_star.dart';
 import 'package:flutter_unit/common/entities/entities.dart';
 import 'package:flutter_unit/common/style/style.dart';
 import 'package:flutter_unit/common/values/dimens.dart';
-import 'package:flutter_unit/page/widget_detail/widget/panel.dart';
-import 'package:get/get.dart';
 
 import '../../../common/values/values.dart';
 
@@ -74,7 +72,7 @@ class WidgetDetailPanel extends StatelessWidget {
                 right: Dimens.margin,
               ),
               child: Hero(
-                tag: "hero_widget_image_${model.widgetId}",
+                tag: "hero_widget_image_${model.id}",
                 child: ClipRRect(
                   borderRadius: const BorderRadius.all(Radius.circular(8)),
                   child: model.image == null

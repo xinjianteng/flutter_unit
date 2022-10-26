@@ -4,23 +4,6 @@
 /// contact me by email 1981462002@qq.com
 /// 说明:
 ///
-//    {
-//      "widgetId": 127,
-//      "name": 'AlertDialog基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【title】 : 顶部组件   【Widget】\n"
-//          "【content】 : 内容组件  【Widget】\n"
-//          "【titleTextStyle】 : 顶部文字样式  【TextStyle】\n"
-//          "【contentTextStyle】 : 内容文字样式  【TextStyle】\n"
-//          "【titlePadding】 : 顶部内边距  【EdgeInsetsGeometry】\n"
-//          "【contentPadding】 : 内容内边距  【EdgeInsetsGeometry】\n"
-//          "【actions】 : 右下角组件列表  【List<Widget>】\n"
-//          "【backgroundColor】 : 背景色  【Color】\n"
-//          "【elevation】 : 影深  【double】\n"
-//          "【shape】 : 形状   【ShapeBorder】",
-//    }
-
 import 'package:flutter/material.dart';
 
 class CustomAlertDialog extends StatelessWidget {

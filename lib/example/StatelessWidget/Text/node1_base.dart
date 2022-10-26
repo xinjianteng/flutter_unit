@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/example/exp/stateless_unit.dart';
 
 class CustomText extends StatelessWidget {
   const CustomText({Key? key}) : super(key: key);

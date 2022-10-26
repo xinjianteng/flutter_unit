@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_star/star.dart';
 import 'package:flutter_star/star_score.dart';
-
 import 'package:flutter_unit/common/entities/entities.dart';
 import 'package:flutter_unit/common/values/colors.dart';
 import 'package:flutter_unit/common/values/values.dart';
@@ -42,7 +41,7 @@ class TechnoWidgetListItem extends StatelessWidget {
                   crossAxisAlignment: WrapCrossAlignment.center,
                   children: <Widget>[
                     Hero(
-                      tag: "hero_widget_image_${data.widgetId}",
+                      tag: "hero_widget_image_${data.id}",
                       child: _buildLeading(),
                     ),
                     StarScore(

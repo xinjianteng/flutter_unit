@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
+import 'enums.dart';
+
 /// 组件分页 request
 ///
 class WidgetsPageListRequestEntity {
@@ -54,62 +56,104 @@ class WidgetPageListResponseEntity {
 }
 
 class WidgetsVo {
-  String? createdAt;
+  int? id;
+  String? name;
+  String? nameCN;
 //  是否弃用
   int? deprecated;
+  String? createdAt;
 
-  String? family;
-  int? widgetId;
+
+  int? family;
+
   String? info;
   int? lever;
   String? linkWidget;
-  String? name;
-  String? nameCN;
+
   String? objectId;
   String? updatedAt;
   final ImageProvider? image;
 
   WidgetsVo({
     Key? key,
+    this.id,
+    this.name,
+    this.nameCN,
     this.createdAt,
     this.deprecated,
     this.family,
-    this.widgetId,
     this.info,
     this.lever,
     this.linkWidget,
-    this.name,
-    this.nameCN,
     this.objectId,
     this.updatedAt,
     this.image,
   });
 
   Map<String, dynamic> toJson() => {
+        "id": id,
+        "name": name,
+        "nameCN": nameCN,
         "createdAt": createdAt,
         "deprecated": deprecated,
         "family": family,
-        "widgetId": widgetId,
         "info": info,
         "lever": lever,
         "linkWidget": linkWidget,
-        "name": name,
-        "nameCN": nameCN,
         "objectId": objectId,
         "updatedAt": updatedAt,
       };
 
   factory WidgetsVo.fromJson(Map<String, dynamic> json) => WidgetsVo(
+        id: json["id"],
+        name: json["name"],
+        nameCN: json["nameCN"],
         createdAt: json["createdAt"],
         deprecated: json["deprecated"],
         family: json["family"],
-        widgetId: json["widgetId"],
         info: json["info"],
         lever: json["lever"],
         linkWidget: json["linkWidget"],
-        nameCN: json["nameCN"],
-        name: json["name"],
         objectId: json["objectId"],
         updatedAt: json["updatedAt"],
       );
+
+
+
+  static convertImage(String name) {
+    return name.isEmpty ? null : AssetImage(name);
+  }
+
+
+  static List<int> formatLinkTo(String links) {
+    if (links.isEmpty) {
+      return [];
+    }
+    if (!links.contains(',')) {
+      return [int.parse(links)];
+    }
+    return links.split(',').map<int>((e) => int.parse(e)).toList();
+  }
+
+
+  static WidgetFamily toFamily(int id) {
+    switch (id) {
+      case 0:
+        return WidgetFamily.statelessWidget;
+      case 1:
+        return WidgetFamily.statefulWidget;
+      case 2:
+        return WidgetFamily.singleChildRenderObjectWidget;
+      case 3:
+        return WidgetFamily.multiChildRenderObjectWidget;
+      case 4:
+        return WidgetFamily.sliver;
+      case 5:
+        return WidgetFamily.proxyWidget;
+      case 6:
+        return WidgetFamily.other;
+      default:
+        return WidgetFamily.statelessWidget;
+    }
+  }
 }

@@ -3,15 +3,6 @@
 /// contact me by email 1981462002@qq.com
 /// 说明:
 ///
-//    {
-//      "widgetId": 129,
-//      "name": 'CupertinoAlertDialog基本使用',
-//      "priority": 1,
-//      "subtitle": "【title】 : 顶部组件   【Widget】\n"
-//          "【content】 : 内容组件  【Widget】\n"
-//          "【actions】 : 顶部文字样式  【List<Widget>】",
-//    }
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

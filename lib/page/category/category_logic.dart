@@ -1,17 +1,10 @@
-import 'dart:io';
-import 'dart:convert';
-
-import 'package:flutter/material.dart';
 import 'package:flutter_unit/common/apis/apis.dart';
 import 'package:flutter_unit/common/entities/categorys.dart';
 import 'package:get/get.dart';
-
-import 'category_state.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-import '../../common/style/style.dart';
-import '../../common/values/values.dart';
-import '../../common/widget/appbar.dart';
+import '../../common/repositiores/rep/impl/category_db_repository.dart';
+import 'category_state.dart';
 
 class CategoryLogic extends GetxController {
   final CategoryState state = CategoryState();
@@ -24,6 +17,7 @@ class CategoryLogic extends GetxController {
   /// 成员变量
   String categoryCode = '';
 
+  final CategoryDbRepository repository= CategoryDbRepository();
 
   @override
   void onReady() {
@@ -39,12 +33,19 @@ class CategoryLogic extends GetxController {
 
   /// 事件
   void onRefresh() {
-    getCategoryDatas().then((_) {
+
+    repository.selectAllCategory().then((value) {
+      state.categoryList.value=value;
       refreshController.refreshCompleted();
+      refreshController.loadComplete();
     }).catchError((_) {
       refreshController.refreshFailed();
     });
+
   }
+
+
+
 
 
 

@@ -1,17 +1,17 @@
 import 'package:flutter_unit/common/entities/entities.dart';
 import 'package:get/get.dart';
 
-class WidgetDetailState {
 
-// 自定义类 - 可以是任何类
-  final widgetItem = WidgetsVo().obs;
+class WidgetDetailState {
+  RxInt id = 0.obs;
+
+  final widgetVo = WidgetsVo().obs;
 
   // 关联组件
   RxList<WidgetsVo> linkWidgets = <WidgetsVo>[].obs;
 
   // 示例
-  RxList<NodeModel> nodeModels = <NodeModel>[].obs;
-
+  RxList<NodeVo> nodeVo = <NodeVo>[].obs;
 
   WidgetDetailState() {
     ///Initialize variables

@@ -5,15 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_unit/common/utils/storage_utils.dart';
 import 'package:get/get.dart';
+import 'package:path/path.dart' as path;
 
 import 'common/plateform_adapter/database/db_open_helper.dart';
 import 'common/repositiores/local_db.dart';
 import 'common/store/config.dart';
 import 'common/store/user.dart';
 import 'common/utils/utils.dart';
-
-import 'package:path/path.dart' as path;
-
 import 'common/values/values.dart';
 
 /// 全局静态数据
@@ -64,7 +62,7 @@ class Global {
     bool shouldCopy = false;
     String versionStr = await rootBundle.loadString('assets/version.json');
     int dbVersion = await json.decode(versionStr)['dbVersion'];
-    int versionInSP = await StorageService.to.getInt(DBVERSION_KEY) ?? -1;
+    int versionInSP = StorageService.to.getInt(DBVERSION_KEY);
 
     // 版本升级，执行拷贝
     if (dbVersion > versionInSP) {

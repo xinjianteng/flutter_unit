@@ -72,6 +72,16 @@ class TextStyleUnit {
     color: AColors.primaryText,
   );
 
+
+  //  分类简介
+  static const emptyTip = TextStyle(
+    fontSize: 22,
+    color: AColors.yellow,
+  );
+
+
+
+
   static const commonChip = TextStyle(
     fontSize: 12,
     color: Colors.white,

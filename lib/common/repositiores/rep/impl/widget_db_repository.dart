@@ -1,8 +1,10 @@
-import '../../bean/widget_po.dart';
-import '../../local_db.dart';
+import 'package:flutter_unit/common/entities/entities.dart';
+import 'package:flutter_unit/common/repositiores/dao/node_dao.dart';
+
+import '../../../entities/widgets.dart';
 import '../../dao/widget_dao.dart';
-import '../../model/widget_filter.dart';
-import '../../model/widget_model.dart';
+import '../../local_db.dart';
+import '../../../entities/widget_filter.dart';
 import '../../rep/widget_repository.dart';
 
 /// create by 张风捷特烈 on 2020-03-03
@@ -12,39 +14,50 @@ import '../../rep/widget_repository.dart';
 class WidgetDbRepository implements WidgetRepository {
   WidgetDao get _widgetDao => LocalDb.instance.widgetDao;
 
-  // NodeDao get _nodeDao => LocalDb.instance.nodeDao;
-  // LikeDao get _likeDao => LocalDb.instance.likeDao;
+  NodeDao get _nodeDao => LocalDb.instance.nodeDao;
 
-  // @override
-  // Future<List<WidgetModel>> loadLikeWidgets() async {
-  //   List<int> likeIds = await _likeDao.likeWidgetIds();
-  //   List<Map<String, dynamic>> data = await _widgetDao.queryByIds(likeIds);
-  //   List<WidgetPo> widgets = data.map((e) => WidgetPo.fromJson(e)).toList();
-  //   return widgets.map(WidgetModel.fromPo).toList();
-  // }
 
   @override
-  Future<List<WidgetModel>> searchWidgets(WidgetFilter args) async {
+  Future<List<WidgetsVo>> searchWidgets(WidgetFilter args) async {
     List<Map<String, dynamic>> data = await _widgetDao.search(args);
-    List<WidgetPo> widgets = data.map((e) => WidgetPo.fromJson(e)).toList();
-    return widgets.map((e) => WidgetModel.fromPo(e)).toList();
+    List<WidgetsVo> results = data.map((e) => WidgetsVo.fromJson(e)).toList();
+    return results;
   }
 
-//
-// @override
-// Future<List<NodeModel>> loadNode(WidgetModel widgetModel) async {
-//   List<Map<String, dynamic>> data = await _nodeDao.queryById(widgetModel.id);
-//   List<NodeModel> nodes = data.map((e) => NodeModel.fromJson(e)).toList();
-//   return nodes;
-// }
-//
-// @override
-// Future<List<WidgetModel>> loadWidget(List<int> id) async {
-//   List<Map<String, dynamic>> data = await _widgetDao.queryByIds(id);
-//   List<WidgetPo> widgets = data.map((e) => WidgetPo.fromJson(e)).toList();
-//   if (widgets.isNotEmpty) return widgets.map(WidgetModel.fromPo).toList();
-//   return [];
-// }
+  @override
+  Future<List<WidgetsVo>> selectAllWidgets() async {
+    List<Map<String, dynamic>> data = await _widgetDao.queryAll();
+    List<WidgetsVo> results = data.map((e) => WidgetsVo.fromJson(e)).toList();
+    return results;
+  }
+
+  @override
+  Future<List<WidgetsVo>> selectWidgetById(int id) async {
+    List<Map<String, dynamic>> data = await _widgetDao.queryById(id);
+    List<WidgetsVo> results = data.map((e) => WidgetsVo.fromJson(e)).toList();
+    return results;
+  }
+
+  @override
+  Future<List<WidgetsVo>> selectWidgetsByIds(List<int>? id) async {
+    if (id == null) {
+      return [];
+    } else {
+      List<Map<String, dynamic>> data = await _widgetDao.queryByIds(id);
+      List<WidgetsVo> results = data.map((e) => WidgetsVo.fromJson(e)).toList();
+      return results;
+    }
+  }
+
+  @override
+  Future<List<NodeVo>> selectNodeByWidgetId(int widgetId) async {
+
+    List<Map<String, dynamic>> data = await _nodeDao.queryByWidgetId(widgetId);
+
+    List<NodeVo> nodes = data.map((e) => NodeVo.fromJson(e)).toList();
+    return nodes;
+  }
+
 //
 // @override
 // Future<void> toggleLike(

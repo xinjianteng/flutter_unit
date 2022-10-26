@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_unit/common/entities/entities.dart';
 
 class NodePageListRequestEntity {
   String? where;
@@ -19,7 +18,7 @@ class NodePageListRequestEntity {
 
 /// 组件分页 response
 class NodePageListResponseEntity {
-  List<NodeModel>? results;
+  List<NodeVo>? results;
 
   NodePageListResponseEntity({
     Key? key,
@@ -30,8 +29,8 @@ class NodePageListResponseEntity {
       NodePageListResponseEntity(
         results: json["results"] == null
             ? []
-            : List<NodeModel>.from(
-                json["results"].map((x) => NodeModel.fromJson(x))),
+            : List<NodeVo>.from(
+                json["results"].map((x) => NodeVo.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
@@ -41,7 +40,7 @@ class NodePageListResponseEntity {
       };
 }
 
-class NodeModel {
+class NodeVo {
   String? name;
   String? subtitle;
   String? code;
@@ -53,7 +52,7 @@ class NodeModel {
   String? updatedAt;
   int? widgetId;
 
-  NodeModel({
+  NodeVo({
     Key? key,
     this.name,
     this.subtitle,
@@ -66,8 +65,8 @@ class NodeModel {
     this.widgetId,
   });
 
-  factory NodeModel.fromJson(Map<String, dynamic> map) {
-    return NodeModel(
+  factory NodeVo.fromJson(Map<String, dynamic> map) {
+    return NodeVo(
       name: map['name'],
       subtitle: map["subtitle"],
       code: map["code"],

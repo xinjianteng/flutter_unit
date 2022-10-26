@@ -12,9 +12,9 @@ import 'package:get/get.dart';
 import '../../common/routers/names.dart';
 import '../../common/style/style.dart';
 import 'widget/code/highlighter_style.dart';
+import 'widget/widget_detail_panel.dart';
 import 'widget/widget_node_panel.dart';
 import 'widget_detail_logic.dart';
-import 'widget/widget_detail_panel.dart';
 
 class WidgetDetailPage extends StatelessWidget {
   const WidgetDetailPage({Key? key}) : super(key: key);
@@ -34,7 +34,7 @@ class WidgetDetailPage extends StatelessWidget {
     return transparentAppBar(
       title: Obx(() {
         return Text(
-          state.widgetItem.value.name.toString(),
+          state.widgetVo.value.name.toString(),
           style: TextStyleUnit.appBar,
         );
       }),
@@ -61,7 +61,7 @@ class WidgetDetailPage extends StatelessWidget {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                WidgetDetailPanel(model: state.widgetItem.value),
+                WidgetDetailPanel(model: state.widgetVo.value),
                 linkText,
                 _buildLinkTo(logic, state),
                 const Divider(),
@@ -134,17 +134,18 @@ class WidgetDetailPage extends StatelessWidget {
         HighlighterStyle.codeThemeSupport.keys.toList()[1];
     return Obx(() {
       return SliverList(
-          delegate: SliverChildBuilderDelegate(
-        (_, i) => WidgetNodePanel(
-          codeStyle: codeStyle,
-          codeFamily: 'Inconsolata',
-          text: state.nodeModels[i].name.toString(),
-          subText: state.nodeModels[i].subtitle.toString(),
-          code: state.nodeModels[i].code.toString(),
-          show: ExampleMap.map(state.widgetItem.value.name)[i],
+        delegate: SliverChildBuilderDelegate(
+          (_, i) => WidgetNodePanel(
+            codeStyle: codeStyle,
+            codeFamily: 'Inconsolata',
+            text: state.nodeVo[i].name.toString(),
+            subText: state.nodeVo[i].subtitle.toString(),
+            code: state.nodeVo[i].code.toString(),
+            show: ExampleMap.map(state.widgetVo.value.name)[i],
+          ),
+          childCount: state.nodeVo.length,
         ),
-        childCount: state.nodeModels.length,
-      ));
+      );
     });
   }
 }

@@ -1,8 +1,4 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/common/routers/routes.dart';
-import 'package:flutter_unit/page/flutter/widget/techno_widget_list_item.dart';
 import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 

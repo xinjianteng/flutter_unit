@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_unit/page/search/search_view.dart';
 import 'package:get/get.dart';
 
-import '../../common/style/style.dart';
 import '../../common/values/values.dart';
-import '../../common/widget/widgets.dart';
 import '../category/category_view.dart';
 import '../flutter/flutter_view.dart';
 import '../my/my_view.dart';
@@ -12,10 +10,10 @@ import '../my/my_view.dart';
 class ApplicationState {
   RxInt position = 0.obs;
   List<Widget> pages = [
-    FlutterPage(),
-    CategoryPage(),
-    SearchPage(),
-    MyPage(),
+     FlutterPage(),
+    const CategoryPage(),
+    const SearchPage(),
+    const MyPage(),
   ];
 
   List<BottomNavigationBarItem> bottomTabs = <BottomNavigationBarItem>[

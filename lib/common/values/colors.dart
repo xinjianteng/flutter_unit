@@ -10,7 +10,7 @@ class AColors {
 
 
   /// 主背景 白色
-  static const Color primaryBackground = Color(0xffF6FBF4);
+  static const Color primaryBackground = Color(0xffffffff);
   /// 主控件-背景 蓝色
   static const Color primaryButton =blue;
   /// 主文本 灰色

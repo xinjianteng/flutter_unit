@@ -1,22 +1,36 @@
-import '../../entities/node.dart';
-import '../dao/widget_dao.dart';
-import '../model/widget_filter.dart';
-import '../model/widget_model.dart';
+import 'package:flutter_unit/common/entities/entities.dart';
 
-/// create by 张风捷特烈 on 2020-03-03
-/// contact me by email 1981462002@qq.com
+import '../../entities/widget_filter.dart';
+
 
 abstract class WidgetRepository {
 
-  // Future<List<WidgetModel>> loadWidget(List<int> ids);
 
-  Future<List<WidgetModel>> searchWidgets(WidgetFilter args);
+  Future<List<WidgetsVo>> searchWidgets(WidgetFilter args);
 
-  // Future<List<NodeModel>> loadNode(WidgetModel widgetModel);
+
+//  查询所有组件
+  Future<List<WidgetsVo>> selectAllWidgets();
+
+
+  Future<List<WidgetsVo>> selectWidgetById(int id);
+
+
+
+  Future<List<WidgetsVo>> selectWidgetsByIds(List<int>? ids);
+
+
+  Future<List<NodeVo>> selectNodeByWidgetId(int widgetId);
+
+
+
   //
   // Future<void> toggleLike(int id);
   //
   // Future<List<WidgetModel>> loadLikeWidgets();
 
   // Future<int> collected(int id);
+
+
+
 }
