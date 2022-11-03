@@ -62,12 +62,10 @@ class WidgetsVo {
 //  是否弃用
   int? deprecated;
   String? createdAt;
-
-
   int? family;
 
   String? info;
-  int? lever;
+  double? lever;
   String? linkWidget;
 
   String? objectId;

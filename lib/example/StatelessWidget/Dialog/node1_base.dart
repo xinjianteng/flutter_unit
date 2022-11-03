@@ -1,11 +1,18 @@
-
-
+import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020-03-24
 /// contact me by email 1981462002@qq.com
 /// 说明:
 ///
-import 'package:flutter/material.dart';
-
+//    {
+//      "widgetId": 126,
+//      "name": 'Dialog基本使用',
+//      "priority": 1,
+//      "subtitle":
+//          "【child】 : 动画图标数据   【Widget】\n"
+//          "【elevation】 : 影深  【double】\n"
+//          "【backgroundColor】 : 背景色  【Color】\n"
+//          "【shape】 : 形状   【ShapeBorder】",
+//    }
 class CustomDialog extends StatelessWidget {
   const CustomDialog({Key? key}) : super(key: key);
 
@@ -30,19 +37,22 @@ class CustomDialog extends StatelessWidget {
       ),
     );
 
-  Widget _buildRaisedButton(BuildContext context) => RaisedButton(
-          shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(10))),
-          color: Colors.blue,
-          onPressed: () {
-            showDialog(context: context, builder: (ctx) => _buildDialog());
-          },
-          child: const Text(
-            'Just Show It !',
-            style: TextStyle(color: Colors.white),
-          ),
-
+  Widget _buildRaisedButton(BuildContext context) => ElevatedButton(
+    style: TextButton.styleFrom(
+      backgroundColor: Colors.blue,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(10)),
+      ),
+    ),
+    onPressed: () {
+      showDialog(context: context, builder: (ctx) => _buildDialog());
+    },
+    child: const Text(
+      'Just Show It !',
+      style: TextStyle(color: Colors.white),
+    ),
   );
+
 }
 
 class DeleteDialog extends StatelessWidget {

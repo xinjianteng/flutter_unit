@@ -10,15 +10,14 @@ import '../../common/values/values.dart';
 import '../../common/widget/widgets.dart';
 import 'flutter_logic.dart';
 
-
-
 import 'package:flutter/material.dart';
 
-
 class FlutterPage extends StatelessWidget {
-
   final logic = Get.put(FlutterLogic());
   final state = Get.find<FlutterLogic>().state;
+
+   FlutterPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,10 +48,9 @@ class FlutterPage extends StatelessWidget {
     );
   }
 
-
   Widget widgetItem(WidgetsVo item) {
     return Padding(
-      padding: const EdgeInsets.only(
+      padding:  EdgeInsets.only(
         bottom: 10,
         top: 2,
         left: 10,
@@ -68,7 +66,7 @@ class FlutterPage extends StatelessWidget {
 // 顶部导航
   AppBar _buildAppBar() {
     return transparentAppBar(
-      title: const Text(
+      title: Text(
         '组件',
         style: TextStyleUnit.appBar,
       ),

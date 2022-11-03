@@ -5,6 +5,13 @@ import 'package:flutter/material.dart';
 /// 说明:
 
 
+//    {
+//      "widgetId": 2,
+//      "priority": 4,
+//      "name": "文字对齐方式",
+//      "subtitle": "【textAlign】: 对齐方式   【TextAlign】\n"
+//          "下面依次是:left、right、center、justify、start、end ",
+//    }
 class TextAlignText extends StatelessWidget {
   const TextAlignText({Key? key}) : super(key: key);
 

@@ -42,7 +42,7 @@ class _DraggableLoadingBottomSheetState
         title: const Text('DraggableScrollableSheet'),
       ),
       body: Container(
-        child: RaisedButton(
+        child: ElevatedButton(
           onPressed: () {
             showModalBottomSheet(
                 backgroundColor: Colors.transparent,

@@ -2,6 +2,17 @@
 /// contact me by email 1981462002@qq.com
 /// 说明:
 ///
+//    {
+//      "widgetId": 24,
+//      "priority": 1,
+//      "name": "CupertinoButton点击事件",
+//      "subtitle": "【color】: 颜色   【Color】\n"
+//          "【pressedOpacity】: 按下时透明度   【double】\n"
+//          "【child】: 子组件   【Widget】\n"
+//          "【padding】: 内边距   【EdgeInsetsGeometry】\n"
+//          "【borderRadius】: 圆角半径   【BorderRadius】\n"
+//          "【onPressed】: 点击事件   【Function】",
+//    }
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

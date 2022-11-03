@@ -65,4 +65,5 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation files('libs\\Baidu_Mtj_android_4.0.10.1.jar')
 }

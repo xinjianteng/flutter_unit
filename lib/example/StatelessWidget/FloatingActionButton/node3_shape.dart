@@ -1,6 +1,15 @@
+
+
 /// create by 张风捷特烈 on 2020-03-26
 /// contact me by email 1981462002@qq.com
 /// 说明:
+//    {
+//      "widgetId": 28,
+//      "priority": 3,
+//      "name": "shape属性",
+//      "subtitle": "【shape】: 形状   【ShapeBorder】",
+//    }
+
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -12,7 +21,7 @@ class ShapeFAB extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Map<Color, IconData> data = {
+    Map<Color,IconData> data = {
       Colors.red: Icons.add,
       Colors.blue: Icons.bluetooth,
       Colors.green: Icons.android,
@@ -21,16 +30,15 @@ class ShapeFAB extends StatelessWidget {
         spacing: 20,
         children: data.keys
             .map((e) => FloatingActionButton(
-                  heroTag: e.toString() + "c",
-                  onPressed: () {},
-                  backgroundColor: e,
-                  shape: StarBorder(),
-                  foregroundColor: Colors.white,
-                  child: Icon(data[e]),
-                  tooltip: "android",
-                  elevation: 5,
-                ))
-            .toList());
+          heroTag:  e.toString()+"c",
+          onPressed: () {},
+          backgroundColor: e,
+          shape: StarBorder(),
+          foregroundColor: Colors.white,
+          child: Icon(data[e]),
+          tooltip: "android",
+          elevation: 5,
+        )).toList());
   }
 }
 

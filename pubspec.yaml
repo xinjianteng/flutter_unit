@@ -8,7 +8,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.16.0-80.1.beta <3.0.0"
+  sdk: ">=2.16.0-80.1.beta "
 
 
 dependencies:
@@ -36,7 +36,7 @@ dependencies:
 
 
   # 屏幕适配  https://github.com/OpenFlutter/flutter_screenutil
-  flutter_screenutil: ^5.5.3+2
+  flutter_screenutil: ^5.6.0
 
 
   # 下拉刷新  # 刷新  https://github.com/peng8350/flutter_pulltorefresh/blob/master/README_CN.md

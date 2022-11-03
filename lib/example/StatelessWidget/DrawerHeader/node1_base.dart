@@ -1,7 +1,19 @@
 
 /// create by 张风捷特烈 on 2020-03-26
 /// contact me by email 1981462002@qq.com
-/// 说明:
+/// 说明: 
+
+//    {
+//      "widgetId": 155,
+//      "name": 'DrawerHeader基本使用',
+//      "priority": 1,
+//      "subtitle":
+//          "【child】 : 子组件   【Widget】\n"
+//          "【decoration】 : 装饰   【Decoration】\n"
+//          "【margin】 : 外边距   【EdgeInsetsGeometry】\n"
+//          "【padding】 : 内边距   【EdgeInsetsGeometry】",
+//    }
+
 import 'package:flutter/material.dart';
 class CustomDrawerHeader extends StatelessWidget {
   const CustomDrawerHeader({Key? key}) : super(key: key);

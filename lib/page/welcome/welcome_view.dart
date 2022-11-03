@@ -174,7 +174,7 @@ class _WelcomePageState extends State<WelcomePage>
             direction: Axis.vertical,
             alignment: WrapAlignment.center,
             crossAxisAlignment: WrapCrossAlignment.center,
-            children: const [
+            children:  [
               Text(AStrings.appAuthor, style: TextStyleUnit.splashShadows),
               Text(AStrings.appVersion, style: TextStyleUnit.splashShadows),
             ],

@@ -75,8 +75,8 @@ class WidgetDetailPage extends StatelessWidget {
   }
 
   Widget get linkText => Row(
-        children: const [
-          Padding(
+        children:  [
+          const Padding(
             padding: EdgeInsets.only(
               left: Dimens.margin,
               right: 5,

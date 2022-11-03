@@ -57,7 +57,7 @@ class _CategoryPageState extends State<CategoryPage> {
   // 顶部导航
   AppBar _buildAppBar() {
     return transparentAppBar(
-      title: const Text(
+      title:  Text(
         '组件',
         style: TextStyleUnit.appBar,
       ),

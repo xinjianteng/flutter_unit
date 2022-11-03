@@ -1,7 +1,6 @@
-import 'dart:ui' as ui;
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'dart:ui' as ui;
 /// create by 张风捷特烈 on 2020-04-01
 /// contact me by email 1981462002@qq.com
 /// 说明:  320 DefaultAssetBundle 默认资源包

@@ -1,30 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_unit/common/values/values.dart';
 
 ///文本样式
 class TextStyleUnit {
   // 标题加黑
-  static const navSelect = TextStyle(
+  static TextStyle navSelect = TextStyle(
     fontWeight: FontWeight.bold,
-    fontSize: 16,
+    fontSize: 16.sp,
   );
 
   // 标题加黑
-  static const navNormal = TextStyle(
+  static TextStyle navNormal = TextStyle(
     fontWeight: FontWeight.normal,
-    fontSize: 16,
+    fontSize: 16.sp,
   );
 
   // 标题加黑
-  static const appBar = TextStyle(
+  static TextStyle appBar = TextStyle(
     fontWeight: FontWeight.bold,
-    fontSize: 22,
+    fontSize: 22.sp,
     color: AColors.primaryText,
   );
 
 //  组件列表标题
   static widgetItemTitle(bool deprecated) => TextStyle(
-        fontSize: 17,
+        fontSize: 17.sp,
         fontWeight: FontWeight.bold,
         decoration:
             deprecated ? TextDecoration.lineThrough : TextDecoration.none,
@@ -34,7 +35,7 @@ class TextStyleUnit {
 
   //  组件列表简介
   static widgetItemInfo(bool deprecated) => TextStyle(
-        fontSize: 15,
+        fontSize: 15.sp,
         fontWeight: FontWeight.normal,
         decoration:
             deprecated ? TextDecoration.lineThrough : TextDecoration.none,
@@ -43,7 +44,7 @@ class TextStyleUnit {
 
   //  组件详情标题简介
   static widgetDetailTitle(bool deprecated) => TextStyle(
-        fontSize: 20,
+        fontSize: 20.sp,
         fontWeight: FontWeight.bold,
         decoration:
             deprecated ? TextDecoration.lineThrough : TextDecoration.none,
@@ -52,42 +53,42 @@ class TextStyleUnit {
       );
 
   //  组件详情标题简介
-  static const secondTitle = TextStyle(
-    fontSize: 16,
+  static TextStyle secondTitle = TextStyle(
+    fontSize: 16.sp,
     fontWeight: FontWeight.bold,
     color: AColors.primaryText,
   );
 
   //  分类标题
-  static const categoryTitle = TextStyle(
-    fontSize: 16,
+  static TextStyle categoryTitle = TextStyle(
+    fontSize: 16.sp,
     fontWeight: FontWeight.bold,
     color: AColors.primaryText,
   );
 
   //  分类简介
-  static const categoryInfo = TextStyle(
-    fontSize: 16,
+  static  TextStyle categoryInfo = TextStyle(
+    fontSize: 16.sp,
     fontWeight: FontWeight.bold,
     color: AColors.primaryText,
   );
 
 
   //  分类简介
-  static const emptyTip = TextStyle(
-    fontSize: 22,
+  static TextStyle emptyTip = TextStyle(
+    fontSize: 22.sp,
     color: AColors.yellow,
   );
 
 
 
 
-  static const commonChip = TextStyle(
-    fontSize: 12,
+  static TextStyle commonChip = TextStyle(
+    fontSize: 12.sp,
     color: Colors.white,
   );
 
-  static const splashShadows = TextStyle(
+  static TextStyle splashShadows = TextStyle(
     color: AColors.secondaryText,
     shadows: [
       Shadow(
@@ -96,11 +97,11 @@ class TextStyleUnit {
         offset: Offset(0.1, 0.1),
       )
     ],
-    fontSize: 12,
+    fontSize: 12.sp,
   );
 
-  static const deprecatedChip = TextStyle(
-    fontSize: 12,
+  static TextStyle deprecatedChip = TextStyle(
+    fontSize: 12.sp,
     color: Colors.white,
     decoration: TextDecoration.lineThrough,
     decorationThickness: 2,

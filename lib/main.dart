@@ -24,11 +24,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
+
       designSize: const Size(
         Dimens.width,
         Dimens.height,
       ),
+        // 是否根据宽度/高度中的最小值适配文字
       minTextAdapt: true,
+        // 支持分屏尺寸
       splitScreenMode: true,
       builder: (context, child) => RefreshConfiguration(
         // 配置默认头部指示器,假如你每个页面的头部指示器都一样的话,你需要设置这个
@@ -38,11 +41,11 @@ class MyApp extends StatelessWidget {
         // Viewport不满一屏时,禁用上拉加载更多功能
         hideFooterWhenNotFull: true,
         // 头部触发刷新的越界距离
-        headerTriggerDistance: 80,
+        headerTriggerDistance: 80.h,
         //头部最大可以拖动的范围,如果发生冲出视图范围区域,请设置这个属性
-        maxOverScrollExtent: 100,
+        maxOverScrollExtent: 100.h,
         // 尾部触发刷新的越界距离
-        footerTriggerDistance: 150,
+        footerTriggerDistance: 150.h,
         // 底部最大可以拖动的范围
         maxUnderScrollExtent: 0,
         //这个属性不兼容PageView和TabBarView,如果你特别需要TabBarView左右滑动,你需要把它设置为true
@@ -54,6 +57,10 @@ class MyApp extends StatelessWidget {
         child: GetMaterialApp(
           title: AStrings.appName,
           theme: AppTheme.light,
+          // theme: ThemeData(
+          //   primarySwatch: Colors.blue,
+          //   textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
+          // ),
           debugShowCheckedModeBanner: false,
           initialRoute: AppPages.INITIAL,
           getPages: AppPages.routes,
